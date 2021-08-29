@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("select").change(function () {
+                $(this).find("option:selected").each(function () {
+                    var optionValue = $(this).attr("value");
+                    if (optionValue) {
+                        $(".box").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else {
+                        $(".box").hide();
+                    }
+                });
+            }).change();
+        });
+    </script>
+
+
+
+
+
+</head>
+
+<body>
+    <!-- <div class="navbar">
+        <img src="assets/logo_civil.png" alt="" id="logo_civil" />
+        <div class="new">
+          <h1>CIVIL BANK LIMITED</h1>
+          <p style="font-size: 14px">Sundhara, Kathmadnu</p>
+        </div>
+      </div> -->
+
+      
+    <div class="container">
+        <div class="title">Card Service Request Panel</div>
+        <div class="content">
+            <form action="#">
+                <div class="user-details">
+
+
+                    <!-- 1. Account Number  -->
+                    <div class="input-box">
+                        <span class="details">Account Number</span>
+                        <input type="text" placeholder="" required>
+                    </div>
+
+                    <!-- 2. Name on Card-->
+                    <div class="input-box">
+                        <span class="details">Name on Card</span>
+                        <input type="text" placeholder="Only Alphabets" required>
+                    </div>
+
+
+                    <!-- 3. Collection Branch -->
+                    <div class="input-box">
+                        <span class="details">Collection Brach</span>
+                        <input type="text" placeholder="" required>
+                    </div>
+
+
+                    <!-- 4. Serice Requested -->
+                    <div class="input-box">
+                        <span class="details">Service Requested</span>
+                        <select name="serviceRequest" id="dropdown">
+                            <option>-- Select One --</option>
+                            <option value="newcard">New Card</option>
+                            <option value="cardreplace">Card Replacement</option>
+                            <option value="renewcard">Renew Card</option>
+                            <option value="resetpin">PIN Regeneration</option>
+
+                        </select>
+                    </div>
+
+                    <div class="newcard box">
+                        <div class="container boxview">
+                            <form>
+                                <h4>Please select your card type :</h4>
+                                <div>
+                                  <input type="radio" id="cardChoice1"
+                                   name="cardType" >
+                                  <label for="cardChoice1">OD Card a/c</label><br>
+                              
+                                  <input type="radio" id="cardChoice2"
+                                   name="cardType" >
+                                  <label for="cardChoice2">Current a/c</label><br>
+
+                                  
+                                  <input type="radio" id="cardChoice2"
+                                   name="cardType" >
+                                  <label for="cardChoice3">Social Security a/c</label><br>
+
+                                  
+                                  <input type="radio" id="cardChoice2"
+                                   name="cardType" >
+                                  <label for="cardChoice4">Rest of all types of Saving account</label>
+                                </div>
+                                <div>
+                                    <div class="container boxview">
+
+                                        <ul style="list-style: none;">
+                                            <li>OD Card account - Rs.200</li>
+                                            <li>Current Account - Rs.200</li>
+                                            <li>Social Security Account - Rs.200</li>
+                                            <li>Rest all types of saving account - FREE</li>
+
+      
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                
+                              </form>
+                        </div>
+                    </div>
+
+
+
+                    <div class="cardreplace box">
+                        <div class="container boxview">
+
+                            <form>
+                                <h4>Please select your card type :</h4>
+                                <div>
+                                  <input type="radio" id="cardChoice1"
+                                   name="cardType" >
+                                  <label for="cardChoice1">Domestic</label><br>
+                              
+                                  <input type="radio" id="cardChoice2"
+                                   name="cardType" >
+                                  <label for="cardChoice2">Internatinal</label>
+                                </div>
+                                <div>
+                                    <div class="container boxview">
+
+                                        <ul style="list-style: none;">
+                                            <li>Domestic Charge - Rs.300</li>
+                                            <li>Internatinal Charge - Rs.300</li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                
+                              </form>
+                        </div>
+                    </div>
+
+
+                    <div class="renewcard box">
+                        <div class="container boxview">
+
+                            <form>
+                                <h4>Please select your card type :</h4>
+                                <div>
+                                  <input type="radio" id="cardChoice1"
+                                   name="cardType" >
+                                  <label for="cardChoice1">Domestic</label><br>
+                              
+                                  <input type="radio" id="cardChoice2"
+                                   name="cardType" >
+                                  <label for="cardChoice2">Internatinal</label>
+                                </div>
+                                <div>
+                                    <div class="container boxview" >
+                                        <ul style="list-style: none;">
+                                            <li>Domestic Charge - Rs.300</li>
+                                            <li>Internatinal Charge - Rs.300</li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                
+                              </form>
+                        </div>
+                    </div>
+
+                    <div class="resetpin box">
+                        <div class="container boxview">
+
+                            <form>
+                                <h4>Please select your card type :</h4>
+                                <div>
+                                  <input type="radio" id="cardChoice1"
+                                   name="cardType" >
+                                  <label for="cardChoice1">Domestic</label><br>
+                              
+                                  <input type="radio" id="cardChoice2"
+                                   name="cardType" >
+                                  <label for="cardChoice2">Internatinal</label>
+                                </div>
+                                <div>
+                                    <div class="container boxview">
+
+                                        <ul style="list-style: none;">
+                                            <li>Domestic Pin regeneration Charge - Rs.300</li>
+                                            <li>Internatinal Pin regeneration Charge - $3 (USD)</li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                
+                              </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+                <!-- Fetching Data Content  -->
+
+              
+
+            </form>
+
+            <div style="padding:20px" class="input-box">
+                <button type="submit" onclick="on()">View Fetch Data</button>
+              </div>
+
+              
+            <div class="container" id="overlay" style="background-color: rgb(194, 194, 194,0.3); ">
+                <div class="content">
+
+
+                    
+
+
+
+
+                    <form action="#">
+                        <span id="heading" style="text-decoration: underline;">Account Information</span>
+                        <div class="fetch-details">
+
+
+                            <!-- 1. Account Name  -->
+                            <div class="input-box">
+                                <span class="details">Account Name</span>
+                                <input type="text" placeholder="" required readonly>
+                            </div>
+
+                            <!-- 2. Branch Name-->
+                            <div class="input-box">
+                                <span class="details">Branch Name</span>
+                                <input type="text" placeholder="" required readonly>
+
+                            </div>
+
+
+                            <!-- 3. Branch Code -->
+                            <div class="input-box">
+                                <span class="details">Branch Code</span>
+                                <input type="text" placeholder="" required readonly>
+                            </div>
+
+                            <!-- 4. Contact  -->
+                            <div class="input-box">
+                                <span class="details">Contact Number</span>
+                                <input type="tel" placeholder="" required value="+ 977 - " readonly>
+                            </div>
+
+
+                            <!-- 5. Email ID -->
+                            <div class="input-box">
+                                <span class="details">Email</span>
+                                <input type="email" placeholder="" required readonly>
+                            </div>
+
+
+                            <!-- 6. Currency -->
+                            <div class="input-box">
+                                <span class="details">Account Currency</span>
+                                <input type="text" placeholder="" required readonly>
+                            </div>
+
+
+                            <!-- 7. Accout Type-->
+
+                            <div class="input-box">
+
+                                <span class="details">Account Type</span>
+                                <input type="text" placeholder="" required readonly>
+
+                            </div>
+
+                            <div class="input-box"></div>
+
+                        </div>
+
+
+                        <div class="button">
+                            <input type="submit" value="Submit" />
+                          </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+
+
+
+
+
+
+    <script src="assets/main.js"></script>
+
+</body>
+
+</html>
